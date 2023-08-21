@@ -4,6 +4,7 @@
  * @return {boolean}
  */
 
+// #2337
 var canChange = function (start, target) {
   for (let i = 0; i < start.length; i++) {
     if (start === target) {
