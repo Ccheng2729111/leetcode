@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "leetcode": "node bin/index.js"
+    "leetcode": "node bin/index.js",
+    "debug":"node ./src/zjjaxx&2023-08-11/三数之和.js"
   },
   "type": "module",
   "keywords": [],
