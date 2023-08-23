@@ -51,6 +51,7 @@ var subarraySum2 = function (nums, k) {
     }
 
     //如果总共的相加值-k正好 在map中出现过，那么说明裁剪掉出现的值 就是K
+    // k+x=acc 那么acc-k = x 那么这个x就是前面需要裁剪的窗口 剩下的就是k 
     if (map.has(acc - k)) {
       // 判断出现的次数 count就加几 因为可能出现的次数不是1次
       count += map.get(acc - k);
