@@ -71,6 +71,7 @@ var merge = function (intervals) {
   }
 
   res.push(prev)
+  return res
 };
 
 merge(intervals);
