@@ -1,9 +1,8 @@
 /*
- * @lc app=leetcode.cn id=19 lang=javascript
+ * @lc app=leetcode.cn id=876 lang=javascript
  *
- * [19] 删除链表的倒数第 N 个结点
+ * [876] 链表的中间结点
  */
-
 /**
  * 链表节点
  * @param {*} val
@@ -60,37 +59,27 @@ const logList = (node) => {
  */
 /**
  * @param {ListNode} head
- * @param {number} n
  * @return {ListNode}
  */
-var removeNthFromEnd = function (head, n) {
-  let dummy = new ListNode(-1);
-  dummy.next = getListFromArray(head);
+var middleNode = function (head) {
+  let list = head;
+  let n = 0;
+  while (list !== null) {
+    list = list.next;
+    n++;
+  }
 
-  // 因为要删除倒数第n个节点，所以要找到倒数n+1位置的节点
-  let nNode = findEndIndex(dummy, n + 1);
+  let midRight = Math.floor(n / 2);
 
-  nNode.next = nNode.next.next;
+  let current = head;
+  while (midRight > 0) {
+    current = current.next;
+    midRight--;
+  }
 
-  return dummy.next;
+  return current;
 };
 
-// 找到倒数第n个节点
-function findEndIndex(head, k) {
-  let p1 = head;
-  for (let i = 0; i < k; i++) {
-    p1 = p1.next;
-  }
-
-  let p2 = head;
-  while (p1 !== null) {
-    p1 = p1.next;
-    p2 = p2.next;
-  }
-
-  return p2;
-}
-const head = [1, 2, 3, 4, 5];
-const n = 2;
-removeNthFromEnd(head, n);
+// const head = [1, 2, 3, 4, 5, 6];
+// middleNode(head);
 // @lc code=end
