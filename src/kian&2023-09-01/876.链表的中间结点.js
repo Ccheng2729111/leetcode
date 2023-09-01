@@ -80,6 +80,17 @@ var middleNode = function (head) {
   return current;
 };
 
+var middleNode = function (head) {
+  let fast = head;
+  let slow = head;
+  while (fast !== null && fast.next !== null) {
+    slow = slow.next;
+    fast = fast.next.next;
+  }
+
+  return slow;
+};
+
 // const head = [1, 2, 3, 4, 5, 6];
 // middleNode(head);
 // @lc code=end
