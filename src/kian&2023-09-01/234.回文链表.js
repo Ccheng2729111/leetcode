@@ -63,29 +63,20 @@ const logList = (node) => {
  * @return {boolean}
  */
 var isPalindrome = function (head) {
-  let a = getListFromArray(head)
-  let prev = null;
-  let cur = a;
-  while (cur) {
-    let next = cur.next;
-    cur.next = prev;
-    prev = cur;
-    cur = next;
+  let list = [];
+  while (head) {
+    list.push(head.val);
+    head = head.next;
   }
 
-  let p1 = prev;
-  let p2 = getListFromArray(head);
-
-  while (p1 && p2) {
-    if (p1.val !== p2.val) {
+  for (let i = 0, j = list.length - 1; i < j; i++, j--) {
+    if (list[i] !== list[j]) {
       return false;
     }
-    p1 = p1.next;
-    p2 = p2.next;
   }
 
   return true;
 };
 
-isPalindrome([1, 1, 2, 1]);
+// isPalindrome([1, 2, 2, 1]);
 // @lc code=end
