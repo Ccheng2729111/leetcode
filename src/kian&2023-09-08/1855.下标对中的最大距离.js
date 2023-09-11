@@ -12,18 +12,18 @@
  */
 var maxDistance = function (nums1, nums2) {
   let maxDistan = 0;
-  for (let j = 0; j < nums2.length; ++j) {
+  for (let j = 0; j < nums1.length; ++j) {
     let left = -1;
-    let right = j + 1;
+    let right =nums2.length;
     while (left + 1 < right) {
       let mid = Math.floor((left + right) / 2);
-      if (nums1[mid] <= nums2[j]) {
-        right = mid;
-      } else {
+      if (nums2[mid] >= nums1[j]) {
         left = mid;
+      } else {
+        right = mid;
       }
     }
-    let distance = j - right;
+    let distance = left - j;
     maxDistan = Math.max(distance, maxDistan);
   }
 
