@@ -38,8 +38,8 @@ var minSpeedOnTime = function (dist, hour) {
   }
 
   // 因为答案不能超过Math.pow(2, 7) 所以判断一下 如果最后还是不满足 返回-1
-  if(right> Math.pow(10, 7)) return -1
-  return right
+  if (right > Math.pow(10, 7)) return -1;
+  return right;
 };
 
 minSpeedOnTime([1, 3, 2], 1.9);
